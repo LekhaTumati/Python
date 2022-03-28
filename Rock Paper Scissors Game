@@ -1,0 +1,44 @@
+import random
+print("Rock Paper Scissors")
+listCh = [ "R", "P", "S"]
+userScore = 0
+computerScore = 0
+i = 1
+chance = int(input("How many chances do you want?"))
+while i <= chance:
+    computerCh = str(random.choice(listCh))
+    userCh = input("Enter Rock, Paper, Scissors (say R, P, S)").upper()
+    if userCh == computerCh:
+        print("It is a Tie!")
+    elif userCh == "R":
+        print("Computer enter", computerCh)
+        if computerCh == "P":
+            print("You lose!")
+            computerScore += 1
+        else:
+            print("You win!")
+            userScore += 1
+    elif userCh == "P":
+        print("Computer enter", computerCh)
+        if computerCh == "S":
+            print("You lose!")
+            computerScore += 1
+        else:
+            print("You win!")
+            userScore += 1
+    elif userCh == "S":
+        print("Computer enter", computerCh)
+        if computerCh == "R":
+            print("You lose!")
+            computerScore += 1
+        else:
+            print("You win!")
+            userScore += 1
+        break
+    else:
+        print(":(")
+    
+print("\n score Board")
+print(f"User: {userScore}|computer: {computerScore}")
+print(f"Game number:[{i}]")
+i = i+1
